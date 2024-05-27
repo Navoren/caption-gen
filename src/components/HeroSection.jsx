@@ -19,7 +19,7 @@ function HeroSection() {
             });
             console.log(res.data);
             setProgress(false);
-            const newName = res.data.newName;
+            const newName = res.data.name;
             router.push('/'+newName);
         }
     };

@@ -1,10 +1,17 @@
 'use client'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
 
-function page() {
+function FilePage({params}) {
+  const fileName = params.filename;
+
+  useEffect(() => {
+    axios.get('/api/transcribe?filename='+fileName)
+  }, [fileName]);
+
   return (
-    <div>page</div>
+    <div>{fileName}</div>
   )
 }
 
-export default page
+export default FilePage;
